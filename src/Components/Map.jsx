@@ -1,6 +1,6 @@
 import React from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import { popup } from "leaflet";
+//import { popup } from "leaflet";
 import { Icon } from "leaflet";
 
 export default function MapComp(props) {
@@ -31,14 +31,13 @@ export default function MapComp(props) {
 
   for (let i = 0; i < natEvents.length; i++) {
     for (let j = 0; j < natEvents[i].geometry.length; j++) {
-      const { coordinates } = natEvents[i].geometry[j]
-      const { title } = natEvents[i]
-      const  type = natEvents[i].categories[0].title
-      const dateTime = natEvents[i].geometry[j].date
+      let { coordinates } = natEvents[i].geometry[j]
+      let { title } = natEvents[i]
+      let type = natEvents[i].categories[0].title
+      let dateTime = new Date(natEvents[i].geometry[j].date).toString()
       if (natEvents[i].geometry[j].type === 'Polygon') {
         joinedArray.push([...natEvents[i].geometry[j].coordinates[0][0], title, type, dateTime])
       } else { joinedArray.push([...coordinates, title, type, dateTime]) }
-      console.log(joinedArray[0])
     }
   }
 
@@ -47,8 +46,11 @@ export default function MapComp(props) {
   const stormArr = joinedArray.filter(item => item[3] === 'Severe Storms')
   const wildfireArr = joinedArray.filter(item => item[3] === 'Wildfires')
 
+  const sortArrByDate = joinedArray.sort((a, b) => Date.parse(b[4]) - Date.parse(a[4]))
+  const startPosition = [sortArrByDate[0][1], sortArrByDate[0][0]]
+
   return (
-    <Map center={[45.4, -75.7]} zoom={4}>
+    <Map center={startPosition} zoom={6}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

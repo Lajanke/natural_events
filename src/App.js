@@ -12,7 +12,7 @@ class App extends React.Component {
 }
 
   componentDidMount() {
-    axios.get('https://eonet.sci.gsfc.nasa.gov/api/v3/events?days=2500') //add functionality for user to set days `${days}`, input.
+    axios.get('https://eonet.sci.gsfc.nasa.gov/api/v3/events?days=30') //add functionality for user to set days `${days}`, input.
     .then(response => {
         this.setState ({natEvents: response.data.events, isLoading: false})
     })
@@ -27,8 +27,10 @@ class App extends React.Component {
         <br/>
         <Map natEvents={this.state.natEvents}/>
         <Eventlist natEvents={this.state.natEvents}/>
-        
-        
+        <br/>
+        <footer>
+          Map icons by <a href="https://icons8.com">Icons8</a>
+        </footer>
       </div>
     );
   };

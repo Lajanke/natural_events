@@ -1,6 +1,6 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
-import axios from 'axios';
+//import axios from 'axios';
 
 class DoughnutExample extends React.Component {
 state = {

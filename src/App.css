@@ -67,6 +67,14 @@ a {
   height: 600px;
 }
 
+footer {
+  color: #1f2e22;
+}
+
+footer a {
+  color: #1f2e22;
+}
+
 @media (min-width: 1000px) {
   html, body {
     min-width: 900px;
