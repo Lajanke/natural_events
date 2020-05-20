@@ -1,12 +1,15 @@
 import React from 'react';
 
-function Eventcard(props) {
+const Eventcard = (props) => {
+    const {title} = props.natEvent.categories[0]  
     return (
-    <div>
-    <h3>Event: {props.natEvent.title}</h3>
-    <p>Type: {props.natEvent.categories[0].title}</p>
-    <p>Location: {(props.natEvent.geometry[props.natEvent.geometry.length - 1].coordinates).join(', ')}</p>
-    </div>
+        <div>
+            <h3>Event: {props.natEvent.title}</h3>
+            <p>Type: {title}</p>
+            {props.natEvent.description && 
+            <p>{props.natEvent.description}</p>
+            }
+        </div>
     )
 }
 

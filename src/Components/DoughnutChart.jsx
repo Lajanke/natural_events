@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class DoughnutExample extends React.Component {
 state = {
-    cats: [],
+    cats: [],   //['Sea and Lake Ice', 'Severe Storms', 'Volcanoes', 'Wildfires'],
     isLoading: true,
     catCount: [],
 }
@@ -17,7 +17,6 @@ componentDidMount() {
 }
 
   render() {
-    console.log({ cats: this.state.cats, natEvents: this.props.natEvents })
     const data = {
         labels: this.state.cats,
         datasets: [{
@@ -25,19 +24,10 @@ componentDidMount() {
                 return this.props.natEvents.filter((event) => event.categories[0].title === cat).length
             }),
             backgroundColor: [
-            '#ffb759',
-            '#c2bab0',
-            '#556e51',
-            '#446adb',
-            '#523333',
-            '#a432a8',
-            '#aeeef2',
-            '#ffff30',
-            '#ffffff',
-            '#ff1492',
-            '#b30202',
-            '#32506e',
-            '#de8a0d',
+            '#93c9b0',
+            '#566b28',
+            '#0d4023',
+            '#2a7a2a',
             ],
             hoverBackgroundColor: [
             '#FF6384',
@@ -49,7 +39,7 @@ componentDidMount() {
 
     return (
       <div>
-        <h2>Doughnut Example</h2>
+        <h2>Events in last 30 days</h2> 
         <Doughnut data={data} />
       </div>
     );
