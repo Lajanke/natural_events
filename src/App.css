@@ -1,7 +1,8 @@
 html, body {
   background-color: #e3ffea;
   color: #f7fcf9;
-  max-width: 350px;
+  min-width: 350px;
+  max-width: 600px;
   margin: auto;
   padding: 0;
 }
@@ -54,6 +55,11 @@ li {
   margin: 5px;
   background-color: #4e6b54;
   border-radius: 0.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #f7fcf9;
 }
 
 .leaflet-container {

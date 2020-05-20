@@ -4,17 +4,17 @@ import axios from 'axios';
 
 class DoughnutExample extends React.Component {
 state = {
-    cats: [],   //['Sea and Lake Ice', 'Severe Storms', 'Volcanoes', 'Wildfires'],
+    cats: ['Sea and Lake Ice', 'Severe Storms', 'Volcanoes', 'Wildfires'],
     isLoading: true,
     catCount: [],
 }
 
-componentDidMount() {
+/*componentDidMount() {
     axios.get('https://eonet.sci.gsfc.nasa.gov/api/v3/categories')
     .then(response => {
         this.setState ({cats: response.data.categories.map(cat => cat.title), isLoading: false})
     })
-}
+}*/
 
   render() {
     const data = {
@@ -30,9 +30,10 @@ componentDidMount() {
             '#2a7a2a',
             ],
             hoverBackgroundColor: [
-            '#FF6384',
-            '#36A2EB',
-            '#FFCE56'
+            '#a0dbc0',
+            '#6a8531',
+            '#135e34',
+            '#328f32',
             ]
         }]
     };

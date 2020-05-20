@@ -19,14 +19,16 @@ class App extends React.Component {
 }
 
   render() {
-    if(this.state.isLoading) return <div class="loader"></div>
+    if(this.state.isLoading) return <div className="loader"></div>
     console.log('rendering')
     return (
       <div className='App'>
         <Header/>
-        <Eventlist natEvents={this.state.natEvents}/>
         <br/>
         <Map natEvents={this.state.natEvents}/>
+        <Eventlist natEvents={this.state.natEvents}/>
+        
+        
       </div>
     );
   };
