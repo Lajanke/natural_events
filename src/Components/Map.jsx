@@ -50,7 +50,7 @@ export default function MapComp(props) {
   const startPosition = [sortArrByDate[0][1], sortArrByDate[0][0]]
 
   return (
-    <Map center={startPosition} zoom={6}>
+    <Map center={startPosition} zoom={6} className='mapContainer'>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -1,46 +1,38 @@
 import React from 'react';
-import {Doughnut} from 'react-chartjs-2';
-//import axios from 'axios';
+import { Doughnut } from 'react-chartjs-2';
 
 class DoughnutExample extends React.Component {
-state = {
+  state = {
     cats: ['Sea and Lake Ice', 'Severe Storms', 'Volcanoes', 'Wildfires'],
     isLoading: true,
     catCount: [],
-}
-
-/*componentDidMount() {
-    axios.get('https://eonet.sci.gsfc.nasa.gov/api/v3/categories')
-    .then(response => {
-        this.setState ({cats: response.data.categories.map(cat => cat.title), isLoading: false})
-    })
-}*/
+  }
 
   render() {
     const data = {
-        labels: this.state.cats,
-        datasets: [{
-            data: this.state.cats.map((cat) => {
-                return this.props.natEvents.filter((event) => event.categories[0].title === cat).length
-            }),
-            backgroundColor: [
-            '#93c9b0',
-            '#566b28',
-            '#0d4023',
-            '#2a7a2a',
-            ],
-            hoverBackgroundColor: [
-            '#a0dbc0',
-            '#6a8531',
-            '#135e34',
-            '#328f32',
-            ]
-        }]
+      labels: this.state.cats,
+      datasets: [{
+        data: this.state.cats.map((cat) => {
+          return this.props.natEvents.filter((event) => event.categories[0].title === cat).length
+        }),
+        backgroundColor: [
+          '#125dff',
+          '#8a8a88',
+          '#d90000',
+          '#ffb300',
+        ],
+        hoverBackgroundColor: [
+          '#0a328a',
+          '#595957',
+          '#700606',
+          '#b88102',
+        ]
+      }]
     };
 
     return (
       <div>
-        <h2>Events in last 30 days</h2> 
+        <h2>Events in last 30 days</h2>
         <Doughnut data={data} />
       </div>
     );

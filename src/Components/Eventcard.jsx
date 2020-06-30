@@ -4,7 +4,7 @@ const Eventcard = (props) => {
     const { title } = props.natEvent.categories[0]
     const [ {url} ] = props.natEvent.sources
     return (
-        <div>
+        <div >
             <h3>Event: {props.natEvent.title}</h3>
             <p>Type: {title}</p>
             {props.natEvent.description &&
