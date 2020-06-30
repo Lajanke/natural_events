@@ -60,42 +60,42 @@ export default function MapComp(props) {
         <Marker key={index} position={[loc[1], loc[0]]}
           onClick={() => {
             setActiveEvent(loc);
-          }} 
+          }}
           icon={iceberg}
-          />
-      ))} 
-      
+        />
+      ))}
+
       {stormArr.map((loc, index) => (
         <Marker key={index} position={[loc[1], loc[0]]}
           onClick={() => {
             setActiveEvent(loc);
-          }} 
+          }}
           icon={hurricane}
-          />
+        />
       ))}
-      
-      
+
+
       {wildfireArr.map((loc, index) => (
         <Marker key={index} position={[loc[1], loc[0]]}
           onClick={() => {
             setActiveEvent(loc);
-          }} 
+          }}
           icon={fire}
-          />
+        />
       ))}
 
       {volcanoArr.map((loc, index) => (
         <Marker key={index} position={[loc[1], loc[0]]}
           onClick={() => {
             setActiveEvent(loc);
-          }} 
+          }}
           icon={volcano}
-          />
+        />
       ))}
 
       {activeEvent && (
         <Popup position={[activeEvent[1], activeEvent[0]]}
-        onClose={() => setActiveEvent(null)}
+          onClose={() => setActiveEvent(null)}
         >
           <div>
             <p>{activeEvent[2]}</p>
