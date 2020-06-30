@@ -4,6 +4,7 @@ html, body {
   min-width: 350px;
   margin: auto;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App {
@@ -51,8 +52,10 @@ html, body {
 
 h1 {
   color: #1f2e22;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   margin: auto;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  padding: 1rem 0 0 0;
 }
 
 h2 {
@@ -86,6 +89,10 @@ a {
   text-decoration: none;
   color: #1f2e22;
   padding-bottom: 0.3rem;
+}
+
+a:hover {
+  color: #90b098;
 }
 
 .leaflet-container {
